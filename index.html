@@ -37,15 +37,24 @@
 <body>
     <h1 class="title">Todoist</h1>
     <form>
-        <input type="text" placeholder="Learn js" id="task" name="task">
+        <input type="text" placeholder="Learn JS" id="task" name="task">
         <input type="submit" value="Add Task">
     </form>
 
     <div class="task-section">
         <p class="ts-title">Tasks</p>
-        <ul>
-            <li>Learn HTML</li>
-        </ul>
+        <ul class="task-list"></ul>
     </div>
+    <script>
+        document.querySelector('form').onsubmit = function() {
+            const task = document.querySelector('#task').value;
+    
+            const li = document.createElement('li');
+            li.innerHTML = task;
+    
+            document.querySelector('.task-list').append(li);
+            return false;
+        }
+    </script>
 </body>
 </html>
