@@ -4,35 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todoist</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
 
-        .title {
-            text-align: center;
-            margin-bottom: 50px;
-            margin-top: 25px;
-        }
-
-        .task-section {
-            margin-top: 25px;
-        }
-
-        .ts-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-
-        .task-section ul {
-           margin-top: 9px;
-        }
-
-        .task-section ul li {
-            margin-bottom: 2px;
-        }
-    </style>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <h1 class="title">Todoist</h1>
@@ -45,31 +18,6 @@
         <p class="ts-title">Tasks</p>
         <ul class="task-list"></ul>
     </div>
-    <script>
-        document.querySelector('#submit-btn').disabled = true;
-
-        document.querySelector('#task').onkeyup = function() {
-            if (document.querySelector('#task').value.length === 0) {
-                document.querySelector('#submit-btn').disabled = true;
-            } else {
-                document.querySelector('#submit-btn').disabled = false;
-            }
-        }
-
-        document.querySelector('form').onsubmit = function() {
-
-            let task = document.querySelector('#task').value;
-
-    
-            const li = document.createElement('li');
-            li.innerHTML = task;
-    
-            document.querySelector('.task-list').append(li);
-
-            document.querySelector('#task').value = '';
-            document.querySelector('#submit-btn').disabled = true;
-            return false;
-        }
-    </script>
+    <script type="module" src="/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.task-section {
+    margin-top: 25px;
+}
+
+.ts-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.task-section ul {
+    margin-top: 9px;
+}
+
+.task-section ul li {
+    margin-bottom: 2px;
+}
