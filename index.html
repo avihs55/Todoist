@@ -49,12 +49,17 @@
         document.querySelector('#submit-btn').disabled = true;
 
         document.querySelector('#task').onkeyup = function() {
-            document.querySelector('#submit-btn').disabled = false;
+            if (document.querySelector('#task').value.length === 0) {
+                document.querySelector('#submit-btn').disabled = true;
+            } else {
+                document.querySelector('#submit-btn').disabled = false;
+            }
         }
 
         document.querySelector('form').onsubmit = function() {
 
             let task = document.querySelector('#task').value;
+
     
             const li = document.createElement('li');
             li.innerHTML = task;
