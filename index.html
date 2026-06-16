@@ -38,7 +38,7 @@
     <h1 class="title">Todoist</h1>
     <form>
         <input type="text" placeholder="Learn JS" id="task" name="task">
-        <input type="submit" value="Add Task">
+        <button id="submit-btn">Add Task</button>
     </form>
 
     <div class="task-section">
@@ -46,13 +46,23 @@
         <ul class="task-list"></ul>
     </div>
     <script>
+        document.querySelector('#submit-btn').disabled = true;
+
+        document.querySelector('#task').onkeyup = function() {
+            document.querySelector('#submit-btn').disabled = false;
+        }
+
         document.querySelector('form').onsubmit = function() {
-            const task = document.querySelector('#task').value;
+
+            let task = document.querySelector('#task').value;
     
             const li = document.createElement('li');
             li.innerHTML = task;
     
             document.querySelector('.task-list').append(li);
+
+            document.querySelector('#task').value = '';
+            document.querySelector('#submit-btn').disabled = true;
             return false;
         }
     </script>
